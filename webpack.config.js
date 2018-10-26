@@ -19,22 +19,24 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.jsx?$/,
+          test: /\.css$/,
+          use: ['css-loader'],
+        },
+        {
+          test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
           query: {
             presets: ['es2015','react']
           }
-        }
+        },
       ]
     },
     // plugins: [htmlWebpackPlugin],
 
     devServer: {
       contentBase: './public',
-      colors: true,
-      historyApiFallback: true,
-      inline: true
+      inline: false
     }
   }
         
