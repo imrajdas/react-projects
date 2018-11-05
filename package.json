@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --content-base src --inline --hot",
+    "start": "webpack-dev-server --content-base public --inline --hot",
     "watch": "webpack -d --watch",
     "build": "webpack",
     "serve": "serve ./public"
@@ -12,21 +12,25 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "7",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "react-bootstrap": "^0.32.4",
     "react-materialize": "^2.4.6",
+    "redux-logger": "^3.0.6",
     "serve": "^10.0.2",
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
+    "aws-amplify": "^1.1.9",
     "history": "1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1"
   }
 }
