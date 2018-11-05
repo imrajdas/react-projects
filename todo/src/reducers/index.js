@@ -1,2 +1,7 @@
-import React from 'react'
-import { createStore, combineReducers } from 'redux'
+import {  combineReducers } from 'redux'
+
+import todoReducer from './todoReducer'
+
+export default combineReducers({
+    todoReducer
+})
