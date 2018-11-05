@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Label, FormControl, Button } from 'react-bootstrap'
-import { connect } from 'tls';
+import { connect } from 'react-redux';
 import { fetchTodos } from '../actions/todoActions';
 
 @connect((store) => {
     return {
-        todos: store.todos
+        state: store.todoReducer
     }
 })
 export default class Todo extends Component {
-    constructor(props){
-        super(props)
-    }
+
 
     componentWillMount() {
         this.props.dispatch(fetchTodos())
     }
     render(){
+        console.log(this.props)
         return (
             <div className="container">
                 <h1><center>Todo App</center></h1><br/>
@@ -30,11 +29,11 @@ export default class Todo extends Component {
                 </Form>
 
                 <h3><center>List Todos</center></h3><br/>
-                {
-                    this.props.todos.map((todo) => {
+                <div>
+                    {this.props.state.todos.map((todo) => {
                         return todo
-                    })
-                }
+                    })}
+                </div>
             </div>
         )
     }
